@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    font-family:'Orbitron',sans-serif;
+
+    background:
+    radial-gradient(circle at top left,#9c4108,#0f172a 40%),
+    radial-gradient(circle at bottom right,#0742c2,#000814 50%);
+}
+
+/* Background Glow */
+
+body::before{
+    content:"";
+    position:absolute;
+    width:600px;
+    height:600px;
+    border-radius:50%;
+    background:#8b5cf6;
+    filter:blur(180px);
+    opacity:.35;
+    left:-150px;
+    top:-150px;
+}
+
+body::after{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    background:#2563eb;
+    filter:blur(180px);
+    opacity:.3;
+    right:-100px;
+    bottom:-100px;
+}
+
+.container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:10;
+}
+
+.wrapper{
+
+    width:min(90%,900px);
+
+    padding:50px;
+
+    border-radius:30px;
+
+    backdrop-filter:blur(25px);
+
+    background:rgba(0, 153, 255, 0);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+    0 20px 80px rgba(0,0,0,.45),
+    inset 0 0 1px rgba(255,255,255,.5);
+
+}
+
+.clock{
+
+    font-size:clamp(3rem,12vw,9rem);
+
+    color:black;
+
+    text-align:center;
+
+    letter-spacing:8px;
+
+    font-weight:bold;
+
+    text-shadow:
+    0 0 10px rgb(255, 255, 255),
+    0 0 30px rgba(183, 183, 183, 0.747),
+    0 0 50px rgba(255, 255, 255, 0.606);
+
+    transition:.4s ease;
+
+}
