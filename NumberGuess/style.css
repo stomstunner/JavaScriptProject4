@@ -182,7 +182,7 @@ label {
   padding: 2px 8px;
   border-radius: 6px;
   color: var(--cyan-glow);
-  font-weight: 600;
+  font-weight: 600;  
   margin-left: 4px;
 }
 .guesses span:empty {
