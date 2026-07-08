@@ -1,0 +1,282 @@
+/* ==========================================
+   Google Material Design 3 + Glassmorphism
+========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Google Sans', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+    background: #f4f7fb;
+
+    transition: background-color 1s ease;
+}
+
+/* ==========================================
+   Center Container
+========================================== */
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ==========================================
+   Glass Card
+========================================== */
+
+.wrapper {
+
+    width: 100%;
+    max-width: 520px;
+
+    padding: 50px 40px;
+
+    text-align: center;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, .22);
+
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+
+    border: 1px solid rgba(255, 255, 255, .35);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, .12),
+        inset 0 1px 1px rgba(255, 255, 255, .45);
+
+    transition: .4s ease;
+}
+
+.wrapper:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, .18),
+        inset 0 1px 1px rgba(255, 255, 255, .5);
+}
+
+/* ==========================================
+   Heading
+========================================== */
+
+h1 {
+
+    color: #202124;
+
+    font-size: 2rem;
+
+    font-weight: 700;
+
+    line-height: 1.4;
+
+    margin-bottom: 45px;
+}
+
+/* ===================================
+   Premium Modern Buttons
+=================================== */
+
+button {
+    position: relative;
+    overflow: hidden;
+
+    width: 170px;
+    height: 56px;
+
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    border-radius: 18px;
+
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    color: #fff;
+
+    transition:
+        transform .35s cubic-bezier(.22, 1, .36, 1),
+        box-shadow .35s ease,
+        background .35s ease;
+
+    backdrop-filter: blur(12px);
+
+    isolation: isolate;
+}
+
+/* Shine Effect */
+
+button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(120deg,
+            transparent 15%,
+            rgba(255, 255, 255, .45) 50%,
+            transparent 85%);
+
+    transform: translateX(-150%);
+    transition: transform .8s ease;
+
+    z-index: -1;
+}
+
+button:hover::before {
+    transform: translateX(150%);
+}
+
+button:active {
+    transform: scale(.95);
+}
+
+/* ==============================
+      START BUTTON
+============================== */
+
+.start {
+
+    background: linear-gradient(135deg,
+            #4f46e5,
+            #6366f1,
+            #818cf8);
+
+    box-shadow:
+        0 10px 30px rgba(99, 102, 241, .35);
+
+}
+
+.start:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 18px 40px rgba(99, 102, 241, .45),
+        0 0 25px rgba(129, 140, 248, .45);
+
+}
+
+/* ==============================
+      STOP BUTTON
+============================== */
+
+.stop {
+
+    background: linear-gradient(135deg,
+            #ec4899,
+            #f43f5e,
+            #fb7185);
+
+    box-shadow:
+        0 10px 30px rgba(244, 63, 94, .30);
+
+}
+
+.stop:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 18px 40px rgba(244, 63, 94, .45),
+        0 0 25px rgba(251, 113, 133, .40);
+
+}
+
+/* ==============================
+      Floating Border
+============================== */
+
+button::after {
+
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    border-radius: 18px;
+
+    padding: 1px;
+
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, .55),
+            transparent,
+            rgba(255, 255, 255, .2));
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    opacity: .8;
+}
+
+/* ==========================================
+   Floating Animation
+========================================== */
+
+.wrapper {
+
+    animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0% {
+
+        transform: translateY(0px);
+    }
+
+    50% {
+
+        transform: translateY(-8px);
+    }
+
+    100% {
+
+        transform: translateY(0px);
+    }
+}
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media(max-width:600px) {
+
+    .wrapper {
+
+        padding: 40px 25px;
+    }
+
+    h1 {
+
+        font-size: 1.6rem;
+    }
+
+    button {
+
+        width: 100%;
+
+        margin: 10px 0;
+    }
+}
